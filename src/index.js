@@ -1,9 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { findAllTalkers, findTalkerById, createTalker } = require('./utils/handleTalkers');
 const loginValidations = require('./middlewares/loginValidations');
 const tokenValidation = require('./middlewares/tokenValidation');
 const talkerValidation = require('./middlewares/talkerValidation');
+const { 
+  findAllTalkers,
+  findTalkerById,
+  createTalker,
+  updateTalker,
+} = require('./utils/handleTalkers');
 
 const app = express();
 app.use(bodyParser.json());
@@ -37,6 +42,16 @@ app.post('/talker', tokenValidation, talkerValidation, async (req, res) => {
   try {
     const createdTalker = await createTalker(req.body);
     return res.status(201).json(createdTalker);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+});
+
+app.put('/talker/:id', tokenValidation, talkerValidation, async (req, res) => {
+  const { id } = req.params;
+  try {
+    const updatedTalker = await updateTalker(req.body, Number(id));
+    return res.status(200).json(updatedTalker);
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }

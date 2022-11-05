@@ -30,8 +30,23 @@ const createTalker = async ({ name, age, talk }) => {
   return createdTalker;
 };
 
+const updateTalker = async ({ name, age, talk }, id) => {
+  const allTalkers = JSON.parse(await readFile(talkersPath, 'utf-8'));
+  const filteredTalkers = allTalkers.filter((talker) => talker.id !== id);
+  const updatedTalker = {
+    id,
+    name,
+    age,
+    talk,
+  };
+  filteredTalkers.push(updatedTalker);
+  await writeFile(talkersPath, JSON.stringify(filteredTalkers, null, 2));
+  return updatedTalker;
+};
+
 module.exports = {
   findAllTalkers,
   findTalkerById,
   createTalker,
+  updateTalker,
 };
