@@ -9,6 +9,13 @@ const findAllTalkers = async () => {
   return JSON.parse(allTalkers);
 };
 
+const findTalkersByQuery = async (query) => {
+  const allTalkers = JSON.parse(await readFile(talkersPath, 'utf-8'));
+  if (!query || query.length === 0) return allTalkers;
+  const filteredTalkersByQuery = allTalkers.filter((talker) => talker.name.includes(query));
+  return filteredTalkersByQuery;
+};
+
 const findTalkerById = async (id) => {
   const allTalkers = await readFile(talkersPath, 'utf-8');
   const foundTalker = JSON.parse(allTalkers).find((talker) => talker.id === id);
@@ -53,6 +60,7 @@ const deleteTalker = async (id) => {
 module.exports = {
   findAllTalkers,
   findTalkerById,
+  findTalkersByQuery,
   createTalker,
   updateTalker,
   deleteTalker,

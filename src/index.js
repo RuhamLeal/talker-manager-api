@@ -9,6 +9,7 @@ const {
   createTalker,
   updateTalker,
   deleteTalker,
+  findTalkersByQuery,
 } = require('./utils/handleTalkers');
 
 const app = express();
@@ -25,6 +26,16 @@ app.get('/', (_request, response) => {
 app.get('/talker', async (_req, res) => {
   const talkers = await findAllTalkers();
   return res.status(200).json(talkers);
+});
+
+app.get('/talker/search', tokenValidation, async (req, res) => {
+  const { q } = req.query;
+  try {
+    const foundTalkersByQuery = await findTalkersByQuery(q);
+    return res.status(200).json(foundTalkersByQuery);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
 });
 
 app.get('/talker/:id', async (req, res) => {
