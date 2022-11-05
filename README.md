@@ -1,4 +1,4 @@
-# BookStore-API
+# talker-manager-api
 
 An API that sends Talkers Data and have Login Validations to change, add or delete someone.
 
