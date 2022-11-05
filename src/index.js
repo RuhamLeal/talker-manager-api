@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { findAllTalkers, findTalkerById } = require('./utils/handleTalkers');
+const { findAllTalkers, findTalkerById, createTalker } = require('./utils/handleTalkers');
 const loginValidations = require('./middlewares/loginValidations');
+const tokenValidation = require('./middlewares/tokenValidation');
+const talkerValidation = require('./middlewares/talkerValidation');
 
 const app = express();
 app.use(bodyParser.json());
@@ -25,11 +27,20 @@ app.get('/talker/:id', async (req, res) => {
     const talker = await findTalkerById(Number(id));
     return res.status(200).json(talker);
   } catch (err) {
-    return res.status(404).json({ message: 'Pessoa palestrante não encontrada' });
+    return res.status(404).json({ message: err.message });
   }
 });
 
 app.post('/login', loginValidations);
+
+app.post('/talker', tokenValidation, talkerValidation, async (req, res) => {
+  try {
+    const createdTalker = await createTalker(req.body);
+    return res.status(201).json(createdTalker);
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+});
 
 app.listen(PORT, () => {
   console.log('Online');
