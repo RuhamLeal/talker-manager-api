@@ -40,7 +40,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -130,7 +130,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -200,7 +200,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -273,7 +273,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -343,7 +343,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -416,7 +416,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -485,7 +485,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -567,7 +567,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -641,7 +641,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -713,7 +713,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -786,7 +786,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -859,7 +859,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -932,7 +932,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -965,7 +965,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -986,7 +986,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
               rate: 4,
             },
           })
-          .expect('status', 200)
+          .expect('status', 201)
           .then((responseUpdate) => {
             const { json } = responseUpdate;
             expect(json.id).toBe(resultTalker.id);
@@ -1006,7 +1006,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -1039,7 +1039,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -1060,7 +1060,7 @@ describe('6 - Crie o endpoint PUT /talker/:id', () => {
               rate: 4,
             },
           })
-          .expect('status', 200)
+          .expect('status', 201)
           .then((responseUpdate) => {
             expect(require(TALKER_FILE)).toEqual(
               expect.arrayContaining([

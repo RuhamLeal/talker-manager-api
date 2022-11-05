@@ -2,11 +2,10 @@ const { readFile, writeFile } = require('fs/promises');
 const path = require('path');
 
 const talkersPath = path.resolve(__dirname, '..', 'talker.json');
-console.log(talkersPath);
 
 const findAllTalkers = async () => {
-  const allTalkers = await readFile(talkersPath, 'utf-8');
-  return JSON.parse(allTalkers);
+  const allTalkers = JSON.parse(await readFile(talkersPath, 'utf-8'));
+  return allTalkers;
 };
 
 const findTalkersByQuery = async (query) => {
@@ -17,14 +16,14 @@ const findTalkersByQuery = async (query) => {
 };
 
 const findTalkerById = async (id) => {
-  const allTalkers = await readFile(talkersPath, 'utf-8');
-  const foundTalker = JSON.parse(allTalkers).find((talker) => talker.id === id);
+  const allTalkers = JSON.parse(await readFile(talkersPath, 'utf-8'));
+  const foundTalker = allTalkers.find((talker) => talker.id === id);
   if (foundTalker === undefined) throw new Error('Pessoa palestrante não encontrada');
   return foundTalker;
 };
 
 const createTalker = async ({ name, age, talk }) => {
-  const allTalkers = JSON.parse(await readFile(talkersPath, 'utf-8'));
+  const allTalkers = JSON.parse(await readFile(talkersPath, 'utf-8')); 
   const id = Number(allTalkers[allTalkers.length - 1].id) + 1;
   const createdTalker = {
     name,

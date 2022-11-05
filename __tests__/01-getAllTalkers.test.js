@@ -37,7 +37,7 @@ describe('1 - Crie o endpoint GET /talker', () => {
   it('Será validado que o endpoint retorna um array com todos as pessoas palestrantes cadastradas', async () => {
     await frisby
       .get(`${url}/talker`)
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseGet) => {
         const { json } = responseGet;
         expect(json).toEqual(talkersSeed);
@@ -49,7 +49,7 @@ describe('1 - Crie o endpoint GET /talker', () => {
 
     await frisby
       .get(`${url}/talker`)
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseGet) => {
         const { json } = responseGet;
         expect(json).toEqual([]);

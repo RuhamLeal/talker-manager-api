@@ -12,7 +12,7 @@ describe('3 - Crie o endpoint POST /login', () => {
           password: '12345678',
         },
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -30,7 +30,7 @@ describe('3 - Crie o endpoint POST /login', () => {
             password: '12345678',
           },
         })
-        .expect('status', 200)
+        .expect('status', 201)
         .then((responseLogin) => {
           const { body } = responseLogin;
           const result = JSON.parse(body);

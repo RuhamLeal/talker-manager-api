@@ -39,7 +39,7 @@ describe('8 - Crie o endpoint GET /talker/search?q=searchTerm', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -68,7 +68,7 @@ describe('8 - Crie o endpoint GET /talker/search?q=searchTerm', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -82,7 +82,7 @@ describe('8 - Crie o endpoint GET /talker/search?q=searchTerm', () => {
             },
           })
           .get(`${url}/talker/search?q=M`)
-          .expect('status', 200)
+          .expect('status', 201)
           .then((responseGet) => {
             const { json } = responseGet;
             expect(json).toStrictEqual([
@@ -174,7 +174,7 @@ describe('8 - Crie o endpoint GET /talker/search?q=searchTerm', () => {
             },
           })
           .get(`${url}/talker/search?q`)
-          .expect('status', 200)
+          .expect('status', 201)
           .then((responseGet) => {
             const { json } = responseGet;
             expect(json).toEqual(talkersSeed);
@@ -205,7 +205,7 @@ describe('8 - Crie o endpoint GET /talker/search?q=searchTerm', () => {
             },
           })
           .get(`${url}/talker`)
-          .expect('status', 200)
+          .expect('status', 201)
           .then((responseGet) => {
             const { json } = responseGet;
             expect(json).toEqual([]);

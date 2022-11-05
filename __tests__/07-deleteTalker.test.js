@@ -35,7 +35,7 @@ describe('7 - Crie o endpoint DELETE /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -97,7 +97,7 @@ describe('7 - Crie o endpoint DELETE /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -147,7 +147,7 @@ describe('7 - Crie o endpoint DELETE /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
@@ -180,7 +180,7 @@ describe('7 - Crie o endpoint DELETE /talker/:id', () => {
         email: 'deferiascomigo@gmail.com',
         password: '12345678',
       })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseLogin) => {
         const { body } = responseLogin;
         const result = JSON.parse(body);

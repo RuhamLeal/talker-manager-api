@@ -35,7 +35,7 @@ describe('2 - Crie o endpoint GET /talker/:id', () => {
   it('Será validado que o endpoint retorna uma pessoa palestrante com base no id da rota', async () => {
     await frisby
       .get(`${url}/talker/1`)
-      .expect('status', 200)
+      .expect('status', 201)
       .then((responseGet) => {
         const { json } = responseGet;
         expect(json).toEqual({
