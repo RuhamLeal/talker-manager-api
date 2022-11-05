@@ -20,7 +20,7 @@ SOME ENDPOINTS:
 talkers: http://localhost:3000/talker to show all talker data.     
 login: http://localhost:3000/login to validate your login    
 find talker by ID: http://localhost:3000/talker/${id}          
-find talker by query: http://localhost:3000/talker/search?q=${query}    
+find talker by name: http://localhost:3000/talker/search?q=${name}    
 
 ### Prerequisites
 
