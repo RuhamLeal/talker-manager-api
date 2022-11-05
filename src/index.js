@@ -8,6 +8,7 @@ const {
   findTalkerById,
   createTalker,
   updateTalker,
+  deleteTalker,
 } = require('./utils/handleTalkers');
 
 const app = express();
@@ -54,6 +55,16 @@ app.put('/talker/:id', tokenValidation, talkerValidation, async (req, res) => {
     return res.status(200).json(updatedTalker);
   } catch (err) {
     return res.status(500).json({ message: err.message });
+  }
+});
+
+app.delete('/talker/:id', tokenValidation, async (req, res) => {
+  const { id } = req.params;
+  try {
+    await deleteTalker(Number(id));
+    return res.status(204).json();
+  } catch (err) {
+    return res.status(400).json({ message: err.message });
   }
 });
 

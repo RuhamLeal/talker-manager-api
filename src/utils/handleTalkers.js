@@ -44,9 +44,16 @@ const updateTalker = async ({ name, age, talk }, id) => {
   return updatedTalker;
 };
 
+const deleteTalker = async (id) => {
+  const filteredTalkers = JSON.parse(await readFile(talkersPath, 'utf-8'))
+    .filter((talker) => talker.id !== id);
+  await writeFile(talkersPath, JSON.stringify(filteredTalkers, null, 2));
+};
+
 module.exports = {
   findAllTalkers,
   findTalkerById,
   createTalker,
   updateTalker,
+  deleteTalker,
 };
