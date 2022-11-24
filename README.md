@@ -13,7 +13,7 @@ An API that sends Talkers Data and have Login Validations to change, add or dele
 
 ## Getting Started
 
-This API was developed by me in the trybe course where it works with a json file to save and get the data, many endpoints have validations and are working with route management, it works locally, so you need to download the repository
+This API was developed by me in the [Trybe](https://www.betrybe.com/) course where it works with a json file to save and get the data, many endpoints have validations and are working with route management, it works locally, so you need to download the repository
 
 
 SOME ENDPOINTS:    
